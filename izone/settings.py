@@ -31,6 +31,7 @@ SECRET_KEY = os.getenv('IZONE_SECRET_KEY', '#!kta!9e0)24d@9#=*=ra$r!0k0+p5@w+a%7
 TOOL_FLAG = os.getenv('IZONE_TOOL_FLAG', 'True').upper() == 'TRUE'
 # 是否开启[API]应用
 API_FLAG = os.getenv('IZONE_API_FLAG', 'False').upper() == 'TRUE'
+print(API_FLAG)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('IZONE_DEBUG', 'True').upper() == 'TRUE'
@@ -207,10 +208,16 @@ REST_FRAMEWORK = {
 }
 
 # 配置数据库
+# MYSQL_HOST = os.getenv('IZONE_MYSQL_HOST', '127.0.0.1')
+# MYSQL_NAME = os.getenv('IZONE_MYSQL_NAME', 'izone')
+# MYSQL_USER = os.getenv('IZONE_MYSQL_USER', 'root')
+# MYSQL_PASSWORD = os.getenv('IZONE_MYSQL_PASSWORD', 'python')
+# MYSQL_PORT = os.getenv('IZONE_MYSQL_PORT', 3306)
+
 MYSQL_HOST = os.getenv('IZONE_MYSQL_HOST', '127.0.0.1')
 MYSQL_NAME = os.getenv('IZONE_MYSQL_NAME', 'izone')
 MYSQL_USER = os.getenv('IZONE_MYSQL_USER', 'root')
-MYSQL_PASSWORD = os.getenv('IZONE_MYSQL_PASSWORD', 'python')
+MYSQL_PASSWORD = os.getenv('IZONE_MYSQL_PASSWORD', 'admin123')
 MYSQL_PORT = os.getenv('IZONE_MYSQL_PORT', 3306)
 
 DATABASES = {
@@ -259,14 +266,14 @@ EMAIL_USE_SSL = os.getenv('IZONE_EMAIL_USE_SSL', 'True').upper() == 'TRUE'
 DEFAULT_FROM_EMAIL = os.getenv('IZONE_DEFAULT_FROM_EMAIL', 'TendCode博客 <your-email-address>')
 
 # 网站默认设置和上下文信息
-SITE_LOGO_NAME = os.getenv('IZONE_LOGO_NAME', 'TendCode')
+SITE_LOGO_NAME = os.getenv('IZONE_LOGO_NAME', 'RespectTend')
 SITE_END_TITLE = os.getenv('IZONE_SITE_END_TITLE', 'izone')
 SITE_DESCRIPTION = os.getenv('IZONE_SITE_DESCRIPTION', 'izone 是一个使用 Django+Bootstrap4 搭建的个人博客类型网站')
 SITE_KEYWORDS = os.getenv('IZONE_SITE_KEYWORDS', 'izone,Django博客,个人博客')
 
 # 个性化设置，非必要信息
 # 个人 Github 地址
-MY_GITHUB = os.getenv('IZONE_GITHUB', 'https://github.com/Hopetree')
+MY_GITHUB = os.getenv('IZONE_GITHUB', 'https://github.com/cosplayeer')
 # 工信部备案信息
 BEIAN = os.getenv('IZONE_BEIAN', '网站备案信息')
 # 站长统计（友盟）

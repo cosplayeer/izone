@@ -1,5 +1,6 @@
 bleach==3.3.0
 bootstrap-admin==0.4.3
+django-bootstrap3
 certifi==2019.9.11
 chardet==3.0.4
 defusedxml==0.6.0
@@ -16,13 +17,16 @@ html5lib==1.0.1
 idna==2.8
 jieba==0.39
 Markdown==3.1.1
-mysqlclient==1.4.4
+#mysqlclient==1.4.4
+mysqlclient==2.1.0
 oauthlib==3.1.0
 olefile==0.46
 pilkit==2.0
 Pillow==9.0.1
+#Pillow==8.4.0
 Pygments==2.7.4
 PyMySQL==0.9.3
+#PyMySQL
 python3-openid==3.1.0
 pytz==2019.2
 redis==3.3.8
