@@ -35,7 +35,10 @@ API_FLAG = os.getenv('IZONE_API_FLAG', 'False').upper() == 'TRUE'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('IZONE_DEBUG', 'True').upper() == 'TRUE'
 
-ALLOWED_HOSTS = ['*']
+# 可访问域名参数用于限制不同情况下的访问网站许可策略，以增强网站的安全性。
+# 在DEBUG=True、ALLOWED_HOSTS=[]情况下，网站只接受以localhost或127.0.0.1的被访问，这也是主要的开发调试模式。
+# 实际生产环境部署，DEBUG=False，则ALLOWED_HOSTS的列表中应该挃定可以访问的域名范围。指定范围为['www.example.com']，表示只允许访问该域名；指定范围为['*']，表示允许访问所有域名。
+ALLOWED_HOSTS = ['127.0.0.1','localhost','.duanyapeng.cn']
 
 # Application definition
 
@@ -257,7 +260,8 @@ if admin_email_user:
 EMAIL_HOST = os.getenv('IZONE_EMAIL_HOST', 'smtp.163.com')
 EMAIL_HOST_USER = os.getenv('IZONE_EMAIL_HOST_USER', 'your-email-address')
 EMAIL_HOST_PASSWORD = os.getenv('IZONE_EMAIL_HOST_PASSWORD', 'your-email-password')  # 这个不是邮箱密码，而是授权码
-EMAIL_PORT = os.getenv('IZONE_EMAIL_PORT', 465)  # 由于阿里云的25端口打不开，所以必须使用SSL然后改用465端口
+# EMAIL_PORT = os.getenv('IZONE_EMAIL_PORT', 465)  # 由于阿里云的25端口打不开，所以必须使用SSL然后改用465端口
+EMAIL_PORT = os.getenv('IZONE_EMAIL_PORT', 25)
 EMAIL_TIMEOUT = 5
 # 是否使用了SSL 或者TLS，为了用465端口，要使用这个
 EMAIL_USE_SSL = os.getenv('IZONE_EMAIL_USE_SSL', 'True').upper() == 'TRUE'
