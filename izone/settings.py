@@ -38,7 +38,7 @@ DEBUG = os.getenv('IZONE_DEBUG', 'True').upper() == 'TRUE'
 # 可访问域名参数用于限制不同情况下的访问网站许可策略，以增强网站的安全性。
 # 在DEBUG=True、ALLOWED_HOSTS=[]情况下，网站只接受以localhost或127.0.0.1的被访问，这也是主要的开发调试模式。
 # 实际生产环境部署，DEBUG=False，则ALLOWED_HOSTS的列表中应该挃定可以访问的域名范围。指定范围为['www.example.com']，表示只允许访问该域名；指定范围为['*']，表示允许访问所有域名。
-ALLOWED_HOSTS = ['127.0.0.1','localhost','.duanyapeng.cn']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
