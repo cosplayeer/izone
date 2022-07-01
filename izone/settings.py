@@ -91,7 +91,7 @@ AUTHENTICATION_BACKENDS = (
 
 # allauth需要的配置
 # 当出现"SocialApp matching query does not exist"这种报错的时候就需要更换这个ID
-SITE_ID = 2
+SITE_ID = 5
 
 # 设置登录和注册成功后重定向的页面，默认是/accounts/profile/
 LOGIN_REDIRECT_URL = "/"
@@ -258,7 +258,7 @@ if admin_email_user:
 
 # 邮箱配置
 EMAIL_HOST = os.getenv('IZONE_EMAIL_HOST', 'smtp.163.com')
-EMAIL_HOST_USER = os.getenv('IZONE_EMAIL_HOST_USER', 'your-email-address')
+EMAIL_HOST_USER = os.getenv('IZONE_EMAIL_HOST_USER', 'duanyapeng1@163.com')
 EMAIL_HOST_PASSWORD = os.getenv('IZONE_EMAIL_HOST_PASSWORD', 'your-email-password')  # 这个不是邮箱密码，而是授权码
 # EMAIL_PORT = os.getenv('IZONE_EMAIL_PORT', 465)  # 由于阿里云的25端口打不开，所以必须使用SSL然后改用465端口
 EMAIL_PORT = os.getenv('IZONE_EMAIL_PORT', 25)
@@ -266,7 +266,7 @@ EMAIL_TIMEOUT = 5
 # 是否使用了SSL 或者TLS，为了用465端口，要使用这个
 EMAIL_USE_SSL = os.getenv('IZONE_EMAIL_USE_SSL', 'True').upper() == 'TRUE'
 # 默认发件人，不设置的话django默认使用的webmaster@localhost，所以要设置成自己可用的邮箱
-DEFAULT_FROM_EMAIL = os.getenv('IZONE_DEFAULT_FROM_EMAIL', 'TendCode博客 <your-email-address>')
+DEFAULT_FROM_EMAIL = os.getenv('IZONE_DEFAULT_FROM_EMAIL', 'dyp博客 <duanyapeng1@163.com>')
 
 # 网站默认设置和上下文信息
 SITE_LOGO_NAME = os.getenv('IZONE_LOGO_NAME', 'DYPBlog')
