@@ -18,10 +18,10 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
-      docker build . --file Dockerfile --tag dyp1docker/izone_web:$TAG_NAME
+      docker build . --file Dockerfile --tag dyp1docker/izone_web:1.1.4
     - name: Login to Registry
       run : docker login --username=${{ secrets.DOCKER_USERNAME  }} --password ${{ secrets.DOCKER_PASSWORD }}
     - NAME: Push Image
       run: |
-        docker push dyp1docker/izone_web:$TAG_NAME
+        docker push dyp1docker/izone_web:1.1.4
 
