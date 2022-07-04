@@ -21,7 +21,7 @@ jobs:
         docker build . --file Dockerfile --tag dyp1docker/izone_web:$TAG_NAME
     - name: Login to Registry
       run : docker login --username=${{ secrets.DOCKER_USERNAME  }} --password ${{ secrets.DOCKER_PASSWORD }}
-    - NAME: Push Image
+    - name: Push Image
       run: |
         docker push dyp1docker/izone_web:$TAG_NAME
 
