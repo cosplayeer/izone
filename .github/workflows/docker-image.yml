@@ -13,11 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    #拉取代码建立Docker镜像
     - uses: actions/checkout@v3
     - name: Build the Docker image
-    - run: |
-        docker build . --file Dockerfile --tag dyp1docker/izone_web:$(date +%s)
-    - run: |
-        docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-    - run: |
-        docker push dyp1docker/izone_web:$(date +%s)
+    env:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD}}
+    run: |
+    docker build . --file Dockerfile --tag dyp1docker/izone_web:$(date +%s)
+    docker login -u=DOCKER_USERNAME -p=DOCKER_PASSWORD
+    docker push dyp1docker/izone_web:$(date +%s)
