@@ -17,5 +17,7 @@ jobs:
     - name: Build the Docker image
     - run: |
         docker build . --file Dockerfile --tag dyp1docker/izone_web:$(date +%s)
+    - run: |
         docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+    - run: |
         docker push dyp1docker/izone_web:$(date +%s)
